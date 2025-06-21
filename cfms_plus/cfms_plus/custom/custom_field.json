@@ -1,0 +1,13 @@
+[
+  {
+    "doctype": "Custom Field",
+    "dt": "User",
+    "fieldname": "church_branch",
+    "label": "Church Branch",
+    "fieldtype": "Link",
+    "insert_after": "email",
+    "options": "Church Branch",
+    "hidden": 0,
+    "read_only": 0
+  }
+]
