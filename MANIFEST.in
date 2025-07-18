@@ -1,0 +1,15 @@
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include cfms_plus *.css
+recursive-include cfms_plus *.csv
+recursive-include cfms_plus *.html
+recursive-include cfms_plus *.ico
+recursive-include cfms_plus *.js
+recursive-include cfms_plus *.json
+recursive-include cfms_plus *.md
+recursive-include cfms_plus *.png
+recursive-include cfms_plus *.py
+recursive-include cfms_plus *.svg
+recursive-include cfms_plus *.txt

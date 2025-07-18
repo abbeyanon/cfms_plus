@@ -1,0 +1,46 @@
+{
+    "name": "Recurring Church Service",
+    "doctype": "DocType",
+    "module": "Cfms Plus",
+    "fields": [
+        {
+            "fieldname": "church_service_type",
+            "label": "Church Service Type",
+            "fieldtype": "Link",
+            "options": "Church Service Type",
+            "reqd": 1
+        },
+        {
+            "fieldname": "frequency",
+            "label": "Frequency",
+            "fieldtype": "Select",
+            "options": "Weekly\nBi-weekly\nMonthly",
+            "default": "Weekly",
+            "reqd": 1
+        },
+        {
+            "fieldname": "weekday",
+            "label": "Weekday",
+            "fieldtype": "Select",
+            "options": "Sunday\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday",
+            "reqd": 1
+        },
+        {
+            "fieldname": "start_time",
+            "label": "Start Time",
+            "fieldtype": "Time",
+            "reqd": 1
+        },
+        {
+            "fieldname": "duration",
+            "label": "Duration (minutes)",
+            "fieldtype": "Int",
+            "default": 90
+        },
+        {
+            "fieldname": "notes",
+            "label": "Additional Notes",
+            "fieldtype": "Text Editor"
+        }
+    ]
+}
