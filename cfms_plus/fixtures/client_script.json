@@ -2,6 +2,39 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Event",
+  "enabled": 1,
+  "modified": "2025-07-08 14:55:15.558764",
+  "module": null,
+  "name": "Event-Payment-Fields",
+  "script": "\nfrappe.ui.form.on('Event', {\n    refresh: function(frm) {\n        // Toggle amount field visibility\n        frm.toggle_display(\"event_fee\", frm.doc.is_paid_event);\n    },\n    is_paid_event: function(frm) {\n        // Show/hide amount field when checkbox changes\n        frm.toggle_display(\"event_fee\", frm.doc.is_paid_event);\n        if (!frm.doc.is_paid_event) {\n            frm.set_value(\"event_fee\", null);\n        }\n    }\n});\n        ",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Collection Tool",
+  "enabled": 1,
+  "modified": "2025-07-08 15:09:51.506673",
+  "module": null,
+  "name": "CollectionTool-Department-Fields",
+  "script": "\nfrappe.ui.form.on('Collection Tool', {\n    refresh: function(frm) {\n        // Toggle department field visibility\n        frm.toggle_display(\"department\", frm.doc.is_department_specific);\n    },\n    is_department_specific: function(frm) {\n        // Show/hide department field when checkbox changes\n        frm.toggle_display(\"department\", frm.doc.is_department_specific);\n        if (!frm.doc.is_department_specific) {\n            frm.set_value(\"department\", null);\n        }\n    }\n});\n        ",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Event or Program Attendance TOOL",
+  "enabled": 1,
+  "modified": "2025-07-09 13:41:47.918435",
+  "module": null,
+  "name": "Event or Program Attendance TOOL Client Script",
+  "script": "frappe.ui.form.on(\"Event or Program Attendance TOOL\", {\n    refresh: function(frm) {\n        // Event query\n        frm.set_query(\"event_program_name\", function() {\n            return {\n                filters: {\n                    \"status\": \"Open\",\n                    \"ends_on\": [\">\", frappe.datetime.nowdate()]\n                }\n            };\n        });\n        \n        // Branch query\n        frm.set_query(\"event_branch\", function() {\n            return {\n                filters: {\n                    \"disabled\": 0\n                }\n            };\n        });\n    }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Church Members",
   "enabled": 1,
   "modified": "2025-05-13 12:48:07.379410",

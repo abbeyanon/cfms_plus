@@ -6,7 +6,7 @@ from cfms_plus.utils.attendance import validate_attendance
 app_name = "cfms_plus"
 app_title = "Cfms Plus"
 app_publisher = "Abigael Lemba"
-app_description = "An ENhanced Church Finance and ERP System"
+app_description = "An Enhanced Church Finance and ERP System"
 app_email = "mbitheabigail20@gmail.com"
 app_license = "mit"
 
@@ -34,19 +34,18 @@ doc_events = {
 }
 
 # ------------------
-# Scheduled Tasks (FIXED)
+# Scheduled Tasks
 # ------------------
 scheduler_events = {
     "daily": [
         "cfms_plus.utils.service_scheduler.create_weekly_services", 
         "cfms_plus.utils.events.update_event_statuses"
     ]
-    # Removed non-existent functions:
-    # - cfms_plus.cfms_plus.doctype.recurring_church_service.recurring_church_service.create_weekly_services
-    # - cfms_plus.utils.create_weekly_services.notify_upcoming_services
 }
 
-# Required setup functions
+# ------------------
+# App Setup Hooks
+# ------------------
 def on_app_install():
     """Run when app is installed"""
     pass
@@ -55,11 +54,15 @@ def on_app_uninstall():
     """Run when app is uninstalled"""
     pass
 
-# Include JS/CSS files in desk
+# ------------------
+# Include JS/CSS
+# ------------------
 app_include_css = "/assets/cfms_plus/css/church.css"
 app_include_js = "/assets/cfms_plus/js/church.js"
 
+# ------------------
 # DocType Class Overrides
+# ------------------
 override_doctype_class = {
     "Church Services Attendance": "cfms_plus.overrides.church_attendance.CustomChurchAttendance"
 }
@@ -68,14 +71,19 @@ override_doctype_class = {
 # Fixtures
 # ------------------
 fixtures = [
-    {"doctype": "DocType", "filters": [["name", "in", ["User"]]]},
-    {"doctype": "Email Template", "filters": [["name", "in", ["Church Members Giving Acknowledgement"]]]},
-    {"doctype": "Client Script", "filters": [["name", "in", ["Register Member to Group/Ministry", "Register in Group/Ministry Doc", "Events/Programs Calendar"]]]},
-    {"doctype": "Workflow", "filters": [["name", "in", ["Event/Program Workflow"]]]},
-    {"doctype": "Workflow State"},
-    {"doctype": "Workflow Action Master"},
-    {"doctype": "Workspace", "filters": [["name", "in", ["CFMS +"]]]},
-    {"doctype": "Role", "filters": [["name", "in", ["Pastor"]]]}
+    "Custom Field",
+    "Property Setter",
+   # "Custom Script",
+    "Client Script",
+    "Print Format",
+    "Email Template",
+    "Workflow",
+    "Workflow State",
+    "Workflow Action Master",
+    "Role",
+    "Workspace",
+    "Translation",
+    "Report"
 ]
 
 # ------------------

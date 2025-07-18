@@ -2,6 +2,66 @@
  {
   "docstatus": 0,
   "doctype": "Email Template",
+  "modified": "2025-07-07 22:14:00.583939",
+  "name": "Leave Approval Notification",
+  "response": "<h1>Leave Application Notification</h1>\n<h3>Details:</h3>\n\n\t<table class=\"table table-bordered small\" style=\"max-width: 500px;\">\n\t\t<tr>\n\t\t\t<td>Employee</td>\n\t\t\t<td>{{employee_name}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Leave Type</td>\n\t\t\t<td>{{leave_type}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>From Date</td>\n\t\t\t<td>{{from_date}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>To Date</td>\n\t\t\t<td>{{to_date}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Status</td>\n\t\t\t<td>{{status}}</td>\n\t\t</tr>\n\t</table>\n\n\t{% set doc_link = frappe.utils.get_url_to_form('Leave Application', name) %}\n\n\t<br><br>\n\t<a class=\"btn btn-primary\" href=\"{{ doc_link }}\" target=\"_blank\">{{ _('Open Now') }}</a>",
+  "response_html": null,
+  "subject": "Leave Approval Notification",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2025-07-07 22:14:00.596248",
+  "name": "Leave Status Notification",
+  "response": "<h1>Leave Application Notification</h1>\n<h3>Details:</h3>\n\n\t<table class=\"table table-bordered small\" style=\"max-width: 500px;\">\n\t\t<tr>\n\t\t\t<td>Employee</td>\n\t\t\t<td>{{employee_name}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Leave Type</td>\n\t\t\t<td>{{leave_type}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>From Date</td>\n\t\t\t<td>{{from_date}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>To Date</td>\n\t\t\t<td>{{to_date}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Status</td>\n\t\t\t<td>{{status}}</td>\n\t\t</tr>\n\t</table>\n\n\t{% set doc_link = frappe.utils.get_url_to_form('Leave Application', name) %}\n\n\t<br><br>\n\t<a class=\"btn btn-primary\" href=\"{{ doc_link }}\" target=\"_blank\">{{ _('Open Now') }}</a>",
+  "response_html": null,
+  "subject": "Leave Status Notification",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2025-07-07 22:14:00.606341",
+  "name": "Interview Reminder",
+  "response": "<h1>Interview Reminder</h1>\n\n<p>\n\tInterview: {{name}} is scheduled on {{scheduled_on}} from {{from_time}} to {{to_time}}\n</p>\n",
+  "response_html": null,
+  "subject": "Interview Reminder",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2025-07-07 22:14:00.613866",
+  "name": "Interview Feedback Reminder",
+  "response": "<h1>Interview Feedback Reminder</h1>\n\n<p>\n\tInterview Feedback for Interview {{ name }} is not submitted yet. Please submit your feedback. Thank you, good day!\n</p>\n",
+  "response_html": null,
+  "subject": "Interview Feedback Reminder",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2025-07-07 22:14:00.627736",
+  "name": "Exit Questionnaire Notification",
+  "response": "<h2>Exit Questionnaire</h2>\n<br>\n\n<p>\n\tDear {{ employee_name }},\n\t<br><br>\n\n\tThank you for the contribution you have made during your time at {{ company }}. We value your opinion and welcome the feedback on your experience working with us.\n\tRequest you to take out a few minutes to fill up this Exit Questionnaire.\n\n\t{% set web_form = frappe.db.get_value('HR Settings', 'HR Settings', 'exit_questionnaire_web_form') %}\n\t{% set web_form_link = frappe.utils.get_url(uri=frappe.db.get_value('Web Form', web_form, 'route')) %}\n\n\t<br><br>\n\t<a class=\"btn btn-primary\" href=\"{{ web_form_link }}\" target=\"_blank\">{{ _('Submit Now') }}</a>\n</p>\n",
+  "response_html": null,
+  "subject": "Exit Questionnaire Notification",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2025-07-07 22:17:23.992224",
+  "name": "Dispatch Notification",
+  "response": "<h1>Dispatch Notification</h1>\n<h3>Details:</h3>\n<table class=\"table table-bordered small\" style=\"max-width: 500px;\">\n    <tbody>\n        <tr>\n            <td>Customer's Name</td>\n            <td>{{ customer }}</td>\n        </tr>\n        <tr>\n            <td>Contact's Name</td>\n            <td>{{ first_name }} {{ last_name }}</td>\n        </tr>\n        <tr>\n            <td>Address Name</td>\n            <td>{{ address }}</td>\n        </tr>\n        <tr>\n            <td>Address Details</td>\n            <td>{{ customer_address }}</td>\n        </tr>\n        <tr>\n            <td>Order Number</td>\n            <td>{{ delivery_note }}</td>\n        </tr>\n        <tr>\n            <td>Order Total</td>\n            <td>{{ grand_total }}</td>\n        </tr>\n        <tr>\n            <td>Departure Time</td>\n            <td>{{ departure_time }}</td>\n        </tr>\n        <tr>\n            <td>Estimated Arrival</td>\n            <td>{{ estimated_arrival }}</td>\n        </tr>\n        <tr>\n            <td>Driver's Name</td>\n            <td>{{ driver_name }}</td>\n        </tr>\n        <tr>\n            <td>Driver's Number</td>\n            <td>{{ cell_number }}</td>\n        </tr>\n        <tr>\n            <td>Vehicle Number</td>\n            <td>{{ vehicle }}</td>\n        </tr>\n    </tbody>\n</table>\n",
+  "response_html": null,
+  "subject": "Your order is out for delivery!",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
   "modified": "2025-05-19 12:33:58.849858",
   "name": "Church Members Giving Acknowledgement",
   "response": "<div class=\"ql-editor read-mode\"><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Dear [</span><strong style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">full_name</strong><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">],</span></p><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">We are filled with gratitude for your faithful giving to [</span><strong style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">member_branch</strong><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">]. Your recent [</span><strong style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">collection_type</strong><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">] of Shs. [</span><strong style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">collection_received</strong><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">] is a blessing, and we want to express our sincere appreciation for your partnership in ministry.</span></p><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Because of your generosity, we are able to:</span></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Reach out to those in need in our community.</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Provide a welcoming and uplifting worship experience.</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Support our Church programs.</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Maintain our church facilities, creating a space for fellowship and growth.</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Spread the message of hope and love.</span></li></ol><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">We believe that giving is an act of worship, a tangible expression of our faith, and a way to participate in God's work in the world. As </span><strong style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">2 Corinthians 9:6-7</strong><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\"> reminds us: </span></p><p><em style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">\"Remember this: </em><strong style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\"><em>Whoever sows sparingly will also reap sparingly, and whoever sows generously will also reap generously. Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.</em></strong><em style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">\"</em></p><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Your contribution is more than just financial support; it's an investment in the lives that are being touched and transformed through the ministry of [</span><strong style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">member_branch</strong><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">] We are committed to using your gifts wisely and effectively to further God's kingdom.</span></p><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">Thank you for being a cheerful giver and for partnering with us in this important work. We are blessed to have you as part of our church family.</span></p><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">With heartfelt gratitude.</span></p><p><br></p><p><span style=\"font-size: 16px; color: rgb(27, 28, 29); background-color: rgba(0, 0, 0, 0);\">AUTOGENERATED.</span></p></div>",
