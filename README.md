@@ -1,45 +1,49 @@
-## Cfms Plus
+# Cfms Plus
 
-An ENhanced Church Finance and ERP System
+**Cfms Plus** is an Enhanced Church Finance and ERP System built on the [Frappe Framework](https://frappeframework.com/). It is tailored for churches to help manage finances, services, members, and ministry operations effectively.
 
-## Installation
+---
 
-For starters, ensure that [Frappe](https://github.com/frappe) is installed, since the application is built on FRAPPE FRAMEWORK. Additionally, ensure that [ERPNext](https://github.com/frappe/erpnext) is installed for concise accounting.
+## ✅ Key Features
 
+- 🔹 **Church Branch Management** – Auto-setup of Chart of Accounts when branches are created  
+- 🔹 **Member Registration** – Auto-generated Member ID on creation  
+- 🔹 **Church Services & Events** – Manage events and programs with workflow approvals  
+- 🔹 **Attendance Tracking** – Church service and event attendance tracking by member  
+- 🔹 **Member Giving** – Linked contributions with automatic journal entries  
+- 🔹 **Background Schedulers** – Auto-update event statuses daily  
+- 🔹 **Custom Workflows, Roles & Email Templates** – Predefined for church use cases  
+- 🔹 **Client Scripts & Custom Fields** – Enhanced UX with tailored customizations
+
+---
+
+## 📦 Requirements
+
+- [Frappe Framework](https://github.com/frappe/frappe)
+- [ERPNext](https://github.com/frappe/erpnext) (for core accounting)
+
+---
+
+## ⚙️ Installation
+
+Make sure you have a running Frappe site with ERPNext installed.
+
+### Step-by-step:
 
 ```bash
-git clone https://github.com/johnnzamba/cfms_plus.git
-```
-```bash
-cd cfms_plus
-```
-
-Now Since the App is already cloned, install it on your site:
-
-```bash
-bench -- {{site_name}} install-app cfms_plus
-```
-
-Finally do bench migrate to ensure the customizations and hooks are PROPERLY effected.
-
-```bash
-bench -- {{site_name}} migrate
-```
-
-Once this runs correctly, we are good to go! Utilize Workspace for in-app functionality; as shown below.
+# Clone the app into your bench's apps directory
+cd ~/frappe-bench/apps
+git clone https://github.com/abbeyanon/cfms_plus.git
+# Install the app on your site
+cd ~/frappe-bench
+bench --site your_site_name install-app cfms_plus
+# Apply database migrations
+bench --site your_site_name migrate
 
 
-<br>
-<a href="https://64.media.tumblr.com/5db39619ee090288e1349e9cf96b94b0/3ec77f73cb705a5d-27/s540x810/f626f6e6aafaa7b9acb73011c9cd2a083d727d52.pnj"><img src="https://64.media.tumblr.com/5db39619ee090288e1349e9cf96b94b0/3ec77f73cb705a5d-27/s540x810/f626f6e6aafaa7b9acb73011c9cd2a083d727d52.pnj"/></a>
+📬 Acknowledgement
+This project is developed and maintained by Abigael Lemba.
 
-<br>
+📧 For inquiries or contributions, contact: mbitheabigail20@gmail.com
 
-## Acknowledgement
-
-I want to acknowledge that this project is solely owned by me. All rights, including intellectual property rights, are retained by the original owner. The code, design, and any associated content are proprietary. For any inquiries, Please contact me [here](mailto:#{mbitheabigail20@gmail.com}).
-
-Thank you for your understanding and respect for the intellectual property rights associated with this project.
-
-## License
-
-Unless attributed otherwise, everything is under the MIT License (see LICENSE for more info).
+This project is licensed under the MIT License.
