@@ -38,30 +38,19 @@ doc_events = {
 # ------------------
 scheduler_events = {
     "daily": [
-        "cfms_plus.utils.service_scheduler.create_weekly_services", 
+        "cfms_plus.utils.service_scheduler.create_weekly_services",
         "cfms_plus.utils.events.update_event_statuses"
     ]
 }
 
 # ------------------
-# App Setup Hooks
-# ------------------
-def on_app_install():
-    """Run when app is installed"""
-    pass
-
-def on_app_uninstall():
-    """Run when app is uninstalled"""
-    pass
-
-# ------------------
-# Include JS/CSS
+# App Includes
 # ------------------
 app_include_css = "/assets/cfms_plus/css/church.css"
 app_include_js = "/assets/cfms_plus/js/church.js"
 
 # ------------------
-# DocType Class Overrides
+# Doctype Class Overrides
 # ------------------
 override_doctype_class = {
     "Church Services Attendance": "cfms_plus.overrides.church_attendance.CustomChurchAttendance"
@@ -71,19 +60,19 @@ override_doctype_class = {
 # Fixtures
 # ------------------
 fixtures = [
-    "Custom Field",
-    "Property Setter",
-   # "Custom Script",
-    "Client Script",
-    "Print Format",
-    "Email Template",
-    "Workflow",
-    "Workflow State",
-    "Workflow Action Master",
-    "Role",
-    "Workspace",
-    "Translation",
-    "Report"
+    {"doctype": "DocType", "filters": [["module", "=", "Cfms Plus"]]},
+    {"doctype": "Custom Field"},
+    {"doctype": "Property Setter"},
+    {"doctype": "Client Script"},
+    {"doctype": "Print Format"},
+    {"doctype": "Email Template"},
+    {"doctype": "Workflow"},
+    {"doctype": "Workflow State"},
+    {"doctype": "Workflow Action Master"},
+    {"doctype": "Workspace"},
+    {"doctype": "Role"},
+    {"doctype": "Report"},
+    {"doctype": "Translation"}
 ]
 
 # ------------------
@@ -92,3 +81,14 @@ fixtures = [
 calendar_js = {
     "Event": "public/js/event.js"
 }
+
+# ------------------
+# Optional install/uninstall hooks
+# ------------------
+def on_app_install():
+    """Run when app is installed"""
+    pass
+
+def on_app_uninstall():
+    """Run when app is uninstalled"""
+    pass
