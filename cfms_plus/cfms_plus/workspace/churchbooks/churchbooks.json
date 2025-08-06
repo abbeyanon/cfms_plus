@@ -1,0 +1,96 @@
+{
+ "app": "cfms_plus",
+ "charts": [],
+ "content": "[{\"id\":\"bLxqr-o068\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CHURCHBOOKS</span>\",\"col\":12}},{\"id\":\"crTHOpGfs4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Church Services Attendance\",\"col\":3}},{\"id\":\"RNg8IyUoKo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Collection Tool\",\"col\":3}},{\"id\":\"z2zeS4lB2A\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Recurring church Services\",\"col\":3}},{\"id\":\"zCQ5Y0yHGe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Event list\",\"col\":3}},{\"id\":\"Z9-3S2E79j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Church service types\",\"col\":3}},{\"id\":\"OdBqyT7mUx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Church collections list\",\"col\":3}},{\"id\":\"xWa0xcN54g\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Church members\",\"col\":3}},{\"id\":\"lJNYyRIl3t\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Types of collections\",\"col\":3}}]",
+ "creation": "2025-07-30 14:47:15.720628",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "heart-active",
+ "idx": 1,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "CHURCHBOOKS",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2025-08-04 10:24:09.173343",
+ "modified_by": "Administrator",
+ "module": "Cfms Plus",
+ "name": "CHURCHBOOKS",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "CHURCHBOOKS",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 23.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Collection Tool",
+   "link_to": "Collection Tool",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Church Services Attendance",
+   "link_to": "Church Services Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Event list",
+   "link_to": "Event",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Recurring church Services",
+   "link_to": "Recurring Church Service",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Church service types",
+   "link_to": "Church Service Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Church collections list",
+   "link_to": "Church Collections",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Church members",
+   "link_to": "Church Members",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Types of collections",
+   "link_to": "Collection Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "CHURCHBOOKS",
+ "type": "Workspace"
+}
